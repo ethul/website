@@ -1,53 +1,51 @@
 article
   header
     h1 Eric Thul
-    address eric.thul@cs.mcgill.ca
-  aside
-    figure
-      div.bordered.rounded.imaged
-  section
-    h1 the latest
-    p website construction
-  section
-    h1 vita
-    nav	
-      ul
-        li
-          a.topic[href="cv"] cv
-          a.topic[href="pub/cv/cv.pdf"] pdf
-        li
-          a.topic[href="pub/pages/post.html"] post
-        li
-          a.topic[href="pub/glass"] glass
-        li
-          a.topic[href="pub/music"] music
-        li
-          a.topic[href="pub/bike"] bike
-        li
-          a.topic[href="pub/pages/health.html"] health
-        li
-          a.topic[href="pub/pages/green.html"] green
-  section
-    h1 research
-    p soon...
-  section
-    h1 courses
+    address eric.thul＠cs.mcgill.ca
+  div.clearfix.outer
+    aside
+      figure: div.bordered.rounded.imaged
+    div.inner
+      section
+        h1 the latest
+        p website construction
+      section
+        h1 vita
+        nav	
+          ul
+            li: a[href="cv.html"] cv
+            li: a[href="pub/cv/cv.pdf"] cv.pdf
+            li: a[href="pub/pages/post.html"] post
+            li: a[href="pub/glass"] glass
+            li: a[href="pub/music"] music
+            li: a[href="pub/bike"] bike
+            li: a[href="pub/pages/health.html"] health
+            li: a[href="pub/pages/green.html"] green
+      section
+        h1 research
+        p soon &hellip;
+      section
+        h1 courses
+        nav
+          ul
+            li: a[href="pub/course/2006-fall"] 2006-fall
+            li: a[href="pub/course/2007-winter"]2007-winter
+  footer.small
     nav
       ul
         li
-          a.topic[href="pub/course/2006-fall"] 2006-fall
+          a href="http://www.cs.mcgill.ca" school of computer science
+          |&nbsp;(
+          a href="http://mail.cs.mcgill.ca" mail
+          |)
         li
-          a.topic[href="pub/course/2007-winter"]2007-winter
-  footer
-    nav
-      ul
+          a href="http://www.mcgill.ca" mcgill university
+          |&nbsp;(
+          a href="http://exchange.mcgill.ca" mail
+          |/
+          a href="http://my.mcgill.ca" portal
+          |)
         li
-          a[href="http://www.cs.mcgill.ca"] school of computer science
-          a[href="http://mail.cs.mcgill.ca"] mail
-        li
-          a[href="http://www.mcgill.ca"] mcgill university
-          a[href="http://exchange.mcgill.ca"] mail
-          a[href="http://my.mcgill.ca"] portal
     ul
       li 845 rue sherbrooke ouest
       li montreal, quebec, canada h3a 2t5
