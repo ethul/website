@@ -1,1 +1,4 @@
 *.swp
+assets/*.*.css
+*.html
+!404.html
