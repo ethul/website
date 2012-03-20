@@ -4,7 +4,8 @@ article
     address eric.thul＠cs.mcgill.ca
   div.clearfix.outer
     aside
-      figure: div.bordered.rounded.imaged
+      figure
+        == "<div class=\"bordered rounded imaged\" style=\"background-image: url(images/#{File.basename(Dir["public/images/eric-*.png"].sort_by{|a|File.ctime a}.last)});\" />"
     div.inner
       section
         h1 the latest

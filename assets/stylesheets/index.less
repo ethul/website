@@ -1,0 +1,46 @@
+@import "_boilerplate";
+@import "_frame";
+
+ul {list-style-type: none; padding: 0;}
+
+@border: 10/@em;
+.bordered {border: @border solid #000;}
+.rounded {border-radius: @border; -moz-border-radius: @border; -webkit-border-radius: @border;}
+
+// Squeezed layout
+@media screen and (min-width: 0em) and (max-width: 15em) {
+  header,aside,section,footer {text-align: center;}
+  footer {margin-top: @1col;}
+  aside > figure {display: none;}
+}
+// Mobile narrow layout 240px
+@media screen and (min-width: 15em) {
+  header,aside,section,footer {width: @4cols; margin: 0 auto; text-align: center;}
+  header {margin-bottom: @1col;}
+  footer {margin-top: @1col;}
+  .imaged {width: @4cols - @border*2; height: @4cols - @border*2;}
+}
+// Mobile wide layout 480px
+@media screen and (min-width: 30em) {
+  header,aside,section,footer {width: @6cols; margin: 0 auto; text-align: center;}
+  header {margin-bottom: @1col;}
+  footer {margin-top: @1col;}
+  .imaged {width: @6cols - @border*2; height: @6cols - @border*2;}
+}
+// Tablet layout 600px
+@media screen and (min-width: 37.5em) {
+  header {margin-bottom: @1col;}
+  footer {margin-top: @1col;}
+}
+// Wide layout 912px
+@media screen and (min-width: 57em) {
+  aside {float: left; margin: 0 auto;}
+  section {width: @4cols; margin-left: @1col; text-align: left;}
+  section nav ul li {float: left; margin-right: @1col/4;}
+  section nav ul li:last-child {float: none; margin-right: 0;}
+  header {margin-bottom: @1col;}
+  footer {margin-top: @1col;}
+  footer {clear: left;}
+  .outer {width: @11cols; margin: 0 auto;}
+  .inner {float: left;}
+}
