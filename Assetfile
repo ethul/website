@@ -1,0 +1,45 @@
+require "slim"
+require "rake-pipeline-web-filters"
+
+output "public"
+
+input "assets" do
+  match "images/*.png" do
+    Rake::Pipeline::Web::Filters::CacheBusterFilter.processes_binary_files
+    cache_buster
+  end
+
+  match "stylesheets/{index,cv}.less" do
+    cache_buster
+    less :paths => ["./assets/stylesheets"]
+    yui_css do |input|
+      input.sub "\.min", ""
+    end
+  end
+
+  match "statics/**/*" do
+    copy do |input|
+      input.sub "statics/", ""
+    end
+  end
+end
+
+input "assets" do
+  match "templates/{layout,index}.slim" do
+    tilt_yielding(
+      :yields_to => ["layout","index"],
+      :output_name => "index.html",
+      :locals => {:page => "index"}
+    )
+  end
+end
+
+input "assets" do
+  match "templates/{layout,cv}.slim" do
+    tilt_yielding(
+      :yields_to => ["layout","cv"],
+      :output_name => "cv.html",
+      :locals => {:page => "cv"}
+    )
+  end
+end
